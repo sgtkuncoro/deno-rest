@@ -7,7 +7,7 @@ const connection = new MySQLConnector({
   host: configs.dbHost,
   username: configs.dbUsername,
   password: configs.dbPassword,
-  port: 3306,
+  port: configs.dbPort,
 });
 
 const db = new Database(connection);

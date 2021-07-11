@@ -25,6 +25,7 @@ type ConfigType = {
   dbUsername: string;
   dbPassword: string;
   dbName: string;
+  dbPort: number;
 };
 
 export const config: ConfigType = {
@@ -34,7 +35,8 @@ export const config: ConfigType = {
   appProtocol: envConfig.APP_PROTOCOL,
   appHost: envConfig.APP_HOST,
   appPort: Number(envConfig.APP_PORT),
-  appUrl: `${envConfig.APP_PROTOCOL}://${envConfig.APP_HOST}:${envConfig.APP_PORT}`,
+  appUrl:
+    `${envConfig.APP_PROTOCOL}://${envConfig.APP_HOST}:${envConfig.APP_PORT}`,
   redisHost: envConfig.REDIS_HOST,
   redisPort: Number(envConfig.REDIS_PORT),
   redisSecret: REDIS_SECRET,
@@ -42,6 +44,7 @@ export const config: ConfigType = {
   dbUsername: envConfig.DB_USERNAME,
   dbPassword: envConfig.DB_PASSWORD,
   dbName: envConfig.DB_NAME,
+  dbPort: Number(envConfig.DB_PORT),
 };
 
 export default config;
