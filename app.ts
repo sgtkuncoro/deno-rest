@@ -2,6 +2,7 @@ import { oak } from "./debs.ts";
 import log from "./src/common/logger.ts";
 import dbConnect from "./src/common/db.ts";
 import { initModels, initRouters } from "./src/main.ts";
+import { config } from "./src/config/settings.ts";
 
 // Register models
 initModels(dbConnect);
@@ -15,7 +16,9 @@ app.use((ctx) => {
 });
 
 app.addEventListener("listen", () => {
-  log.info(`Server listening at: http://localhost:8000`);
+  log.info(
+    `Server listening at: ${config.appProtocol}://${config.appHost}:${config.appPort}`
+  );
 });
 
-await app.listen({ port: 8000 });
+await app.listen({ port: config.appPort });
