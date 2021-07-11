@@ -6,6 +6,19 @@ services:
     ports:
       - "6379:6379"
     hostname: redis
+  mysql:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123qwe
+      MYSQL_DATABASE: deno-rest-dev
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 123qwe
+    volumes:
+      - ./docker/data/db:/var/lib/mysql
   app:
     container_name: app
     build:
@@ -18,6 +31,7 @@ services:
     volumes:
       - ./:/var/www/app
     depends_on:
+      - mysql
       - redis
 
 networks:
