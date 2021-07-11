@@ -1,4 +1,4 @@
-import { dotEnv, bcrypt } from "../../debs.ts";
+import { bcrypt, dotEnv } from "../../debs.ts";
 
 const ENV: string = Deno.env.toObject().ENV || "test";
 const ENV_PATH = `.env/.env.${ENV}`;
