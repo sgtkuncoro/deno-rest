@@ -13,10 +13,10 @@ services:
     ports:
       - "3307:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 123qwe
+      MYSQL_ROOT_PASSWORD: dbtest
       MYSQL_DATABASE: deno-rest-dev
       MYSQL_USER: admin
-      MYSQL_PASSWORD: 123qwe
+      MYSQL_PASSWORD: dbtest
     volumes:
       - ./docker/data/db:/var/lib/mysql
   app:
