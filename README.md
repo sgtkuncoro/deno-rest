@@ -1,6 +1,5 @@
-# Deno Rest Boilerplate
-
-Minimal starter kit for Deno Rest project
+# Deno Rest
+Deno backend RESTFul api boilerplate, starter for Deno backend project.
 
 
 ## Dependencies
